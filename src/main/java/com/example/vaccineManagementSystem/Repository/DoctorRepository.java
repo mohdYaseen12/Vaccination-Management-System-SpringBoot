@@ -1,4 +1,8 @@
 package com.example.vaccineManagementSystem.Repository;
 
-public interface DoctorRepository {
+import com.example.vaccineManagementSystem.Models.Doctor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DoctorRepository extends JpaRepository<Doctor,Integer> {
+    Doctor findByEmailId(String emailId);
 }

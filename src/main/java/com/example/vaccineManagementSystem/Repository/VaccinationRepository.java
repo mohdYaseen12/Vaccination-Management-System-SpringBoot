@@ -1,4 +1,7 @@
 package com.example.vaccineManagementSystem.Repository;
 
-public interface VaccinationRepository {
+import com.example.vaccineManagementSystem.Models.VaccinationCenter;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface VaccinationRepository extends JpaRepository<VaccinationCenter,Integer> {
 }
