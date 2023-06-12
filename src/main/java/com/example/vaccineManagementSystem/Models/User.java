@@ -3,6 +3,9 @@ package com.example.vaccineManagementSystem.Models;
 import com.example.vaccineManagementSystem.Enums.Gender;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="user")
 public class User {
@@ -26,6 +29,9 @@ public class User {
 
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
     private Dose dose;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Appointment> appointmentList = new ArrayList<>();
 
     public Dose getDose() {
         return dose;
