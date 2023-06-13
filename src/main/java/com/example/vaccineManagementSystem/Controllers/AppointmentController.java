@@ -17,6 +17,13 @@ public class AppointmentController {
 
     @PostMapping("/add")
     public String bookAppointment(@RequestBody AppointmentReqDto appointmentReqDto){
-        appointmentServices.bookAppointment(appointmentReqDto);
+        try{
+           String response = appointmentServices.bookAppointment(appointmentReqDto);
+           return response;
+        }
+        catch (Exception e){
+            return e.getMessage();
+        }
+
     }
 }
